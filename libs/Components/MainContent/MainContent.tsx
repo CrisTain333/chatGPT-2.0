@@ -1,8 +1,15 @@
-import React from "react";
+import React, { useState } from "react";
 import InputField from "../InputField/InputField";
 import Image from "next/image";
 
 const MainContent = () => {
+  const [input, setInput] = useState("");
+  const [chatLog, setChatLog] = useState([]);
+
+  const handleCallAi = async () => {
+    console.log(input);
+  };
+
   return (
     <div className="">
       <div className="">
@@ -64,7 +71,11 @@ const MainContent = () => {
             </div>
           </div>
           <div className="absolute bottom-0 right-0 left-0">
-            <InputField />
+            <InputField
+              input={input}
+              setInput={setInput}
+              handleCallAi={handleCallAi}
+            />
           </div>
         </div>
       </div>
