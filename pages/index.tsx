@@ -1,3 +1,4 @@
+"use clint";
 import Home from "@/libs/modules/home/home";
 import React from "react";
 

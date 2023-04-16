@@ -16,7 +16,7 @@ const MainContent = () => {
     setChatLog([...chatLog, { user: "me", message: `${input}` }]);
     setInput("");
 
-    const response = await fetch(`${BACKEND_BASE_URL}/api/v1/ai/ask`, {
+    const response = await fetch(`${BACKEND_BASE_URL}/ai/ask`, {
       method: "POST",
       headers: {
         "content-type": "application/json",
@@ -27,7 +27,7 @@ const MainContent = () => {
     });
 
     const data = await response.json();
-    console.log(data);
+    setChatLog([...chatLog, { user: "gpt", message: `${data?.data}` }]);
   };
 
   return (
