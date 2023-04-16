@@ -10,3 +10,9 @@
   font-family: 'Chivo Mono', monospace;
   font-family: 'Heebo', sans-serif;
 }
+
+.inputDesign {
+  max-height: 200px;
+  height: 24px;
+  overflow-y: hidden
+}
