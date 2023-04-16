@@ -12,7 +12,7 @@ const Home = () => {
           <SideMenu />
         </div>
         {/* main_content */}
-        <div className="main_content col-span-10  bg-[#343541] relative">
+        <div className="main_content col-span-10  bg-[#343541] relative text-white">
           <MainContent />
         </div>
       </div>
