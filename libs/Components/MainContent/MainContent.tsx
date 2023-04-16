@@ -142,21 +142,23 @@ const MainContent = () => {
       </main> */}
       <div className="">
         <div className="Chat_box">
-          <div className="chat_log p-6">
-            <div className="chat_message p-3 text-left">
+          <div className="chat_log bg-white/5">
+            <div className="chat_message">
               {/* avatar */}
-              <div className="avatar w-11 rounded-ful">
-                <Image
-                  className="w-11 h-11 rounded-full"
-                  src="https://i.ibb.co/dKNdmP1/profile-pic-4.png"
-                  alt="Rounded avatar"
-                  height={500}
-                  width={500}
-                />
-              </div>
-              {/* Message */}
-              <div className="message">
-                <p>Hello worlds</p>
+              <div className="chat_message_center max-w-md mx-auto flex p-3 text-left  px-6 ">
+                <div className="avatar w-11 rounded-ful">
+                  <Image
+                    className="w-11 h-11 rounded-full"
+                    src="https://i.ibb.co/dKNdmP1/profile-pic-4.png"
+                    alt="Rounded avatar"
+                    height={500}
+                    width={500}
+                  />
+                </div>
+                {/* Message */}
+                <div className="message px-10">
+                  <p>Hello worlds</p>
+                </div>
               </div>
             </div>
           </div>
