@@ -13,7 +13,7 @@ const ChatMessage = ({ message }: any) => {
             {message?.user === "gpt" ? (
               <>
                 {" "}
-                <div className="avatar w-11 h-11 rounded-ful bg-[#10a37f] rounded-full flex items-center justify-center">
+                <div className="avatar w-10 h-10  bg-[#10a37f] rounded-full flex items-center justify-center">
                   {/* <Image
                     className="w-8 h-8 rounded-full"
                     src="https://i.ibb.co/6X6KMvv/artificial-intelligence.png"
@@ -44,7 +44,7 @@ const ChatMessage = ({ message }: any) => {
             ) : (
               <>
                 <Image
-                  className="w-11 h-11 rounded-full"
+                  className="w-10 h-10 rounded-full"
                   src="https://i.ibb.co/dKNdmP1/profile-pic-4.png"
                   alt="Rounded avatar"
                   height={500}
