@@ -141,18 +141,18 @@ const MainContent = () => {
           <form className="stretch mx-2 flex flex-row gap-3 last:mb-2 md:mx-4 md:last:mb-6 lg:mx-auto lg:max-w-2xl xl:max-w-3xl">
             <div className="relative flex h-full flex-1 md:flex-col">
               <div className="flex ml-1 md:w-full md:m-auto md:mb-2 gap-0 md:gap-2 justify-center"></div>
-              <div className="flex flex-col w-full py-2 flex-grow md:py-3 md:pl-4 relative border border-gray-900/50 text-white bg-gray-700 rounded-md shadow-[0_0_15px_rgba(0,0,0,0.10)]">
+              <div className="flex flex-col w-full py-2 flex-grow md:py-3 md:pl-4 relative border border-gray-900/50 text-white bg-[#42434f] rounded-md shadow-[0_0_15px_rgba(0,0,0,0.10)]">
                 <textarea
                   //   tabindex="0"
                   data-id="root"
                   //   style="max-height: 200px; height: 24px; overflow-y: hidden;"
                   rows={1}
                   placeholder="Send a message..."
-                  className="m-0 w-full resize-none border-0 bg-transparent p-0 pr-7 focus:ring-0 focus-visible:ring-0 dark:bg-transparent pl-2 md:pl-0"
+                  className="m-0 w-full resize-none border-0 bg-transparent p-0 pr-7 focus:ring-0 focus-visible:ring-0  pl-2 md:pl-0 "
                 ></textarea>
                 <button
                   //   disabled=""
-                  className="absolute p-1 rounded-md text-gray-500 bottom-1.5 md:bottom-2.5  enabled:dark:hover:text-gray-400 hover:bg-gray-900 disabled:hover:bg-transparent dark:disabled:hover:bg-transparent right-1 md:right-2 disabled:opacity-40"
+                  className="absolute p-1 rounded-md text-gray-500 bottom-1.5 md:bottom-2.5  hover:text-gray-400 hover:bg-gray-900 disabled:hover:bg-transparent dark:disabled:hover:bg-transparent right-1 md:right-2 disabled:opacity-40"
                 >
                   <svg
                     stroke="currentColor"
