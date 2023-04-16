@@ -55,7 +55,7 @@ const ChatMessage = ({ message }: any) => {
           </div>
           {/* Message */}
           <div className="message px-10">
-            <p>{message}</p>
+            <p>{message?.message}</p>
           </div>
         </div>
       </div>
