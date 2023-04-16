@@ -1,29 +1,18 @@
-import React, { useState } from "react";
-import InputField from "../InputField/InputField";
 import Image from "next/image";
-import ChatMessage from "../ChatMessage/ChatMessage";
+import React from "react";
 
-const MainContent = () => {
-  const [input, setInput] = useState<any>("");
-  const [chatLog, setChatLog] = useState<any>([
-    { user: "gpt", message: "how can i Help You" },
-  ]);
-
-  const handleCallAi = async () => {
-    console.log(input);
-    setChatLog([...chatLog, { user: "me", message: `${input}` }]);
-    setInput("");
-  };
-
+const ChatMessage = ({ message }: any) => {
   return (
-    <div className="">
-      <div className="">
-        <div className="Chat_box">
-          <div className="chat_log ">
-            <ChatMessage />
-            <div className="chatGPT_section bg-[#444654]">
-              {/* avatar */}
-              <div className="chat_message_center max-w-3xl mx-auto flex p-3 text-left  px-6 ">
+    <div>
+      <div
+        className={`chat_message ${message?.user === "gpt" && "bg-[#444654]"}`}
+      >
+        {/* avatar */}
+        <div className="chat_message_center max-w-3xl mx-auto flex p-3 text-left  px-6 ">
+          <div className="avatar w-11 rounded-ful">
+            {message?.user === "gpt" ? (
+              <>
+                {" "}
                 <div className="avatar w-11 h-11 rounded-ful bg-[#10a37f] rounded-full flex items-center justify-center">
                   {/* <Image
                     className="w-8 h-8 rounded-full"
@@ -51,19 +40,22 @@ const MainContent = () => {
                     </svg>
                   </span>
                 </div>
-                {/* Message */}
-                <div className="message px-10">
-                  <p>I am ai</p>
-                </div>
-              </div>
-            </div>
+              </>
+            ) : (
+              <>
+                <Image
+                  className="w-11 h-11 rounded-full"
+                  src="https://i.ibb.co/dKNdmP1/profile-pic-4.png"
+                  alt="Rounded avatar"
+                  height={500}
+                  width={500}
+                />
+              </>
+            )}
           </div>
-          <div className="absolute bottom-0 right-0 left-0">
-            <InputField
-              input={input}
-              setInput={setInput}
-              handleCallAi={handleCallAi}
-            />
+          {/* Message */}
+          <div className="message px-10">
+            <p>{message}</p>
           </div>
         </div>
       </div>
@@ -71,4 +63,4 @@ const MainContent = () => {
   );
 };
 
-export default MainContent;
+export default ChatMessage;
