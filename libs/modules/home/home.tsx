@@ -3,10 +3,7 @@ import SideMenu from "@/libs/Components/Sidemenu/Sidemenu";
 import React, { useState } from "react";
 
 const Home = () => {
-  const [chatLog, setChatLog] = useState<any>([
-    { user: "gpt", message: "hy Cristain How can i help you" },
-    { user: "me", message: "i want to use chatGPT-2.0" },
-  ]);
+  const [chatLog, setChatLog] = useState<any>([]);
   return (
     <div>
       {/* Main Div  */}

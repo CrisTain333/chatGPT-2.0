@@ -3,62 +3,12 @@ import InputField from "../InputField/InputField";
 import Image from "next/image";
 import ChatMessage from "../ChatMessage/ChatMessage";
 import { BACKEND_BASE_URL } from "@/libs/config/const";
+import Link from "next/link";
 
 const MainContent = ({ chatLog, setChatLog }: any) => {
   const [input, setInput] = useState<any>("");
-  const [chatHistory, setChatHistory] = useState<any>([]);
-
-  function Loader({ element }: any) {
-    const [loadingText, setLoadingText] = useState("");
-
-    const loadInterval = setInterval(() => {
-      // Update the text content of the loading indicator
-      setLoadingText((loadingText) => {
-        const newLoadingText = loadingText + ".";
-        return newLoadingText.length > 3 ? "" : newLoadingText;
-      });
-    }, 300);
-
-    return <span>{loadingText}</span>;
-  }
-  function TypingText({ element, text }: any) {
-    const [index, setIndex] = useState(0);
-
-    const interval = setInterval(() => {
-      if (index < text.length) {
-        element.innerHTML += text.charAt(index);
-        setIndex(index + 1);
-      } else {
-        clearInterval(interval);
-      }
-    }, 20);
-
-    return null;
-  }
-
-  function generateUniqueId() {
-    const timestamp = Date.now();
-    const randomNumber = Math.random();
-    const hexadecimalString = randomNumber.toString(16);
-
-    return `id-${timestamp}-${hexadecimalString}`;
-  }
-
-  const typeText = (element: any, text: any) => {
-    let index = 0;
-
-    const interval = setInterval(() => {
-      if (index < text.length) {
-        element.innerHTML += text.charAt(index);
-        index++;
-      } else {
-        clearInterval(interval);
-      }
-    }, 20);
-  };
 
   const handleCallAi = async () => {
-    console.log(input);
     let newChatLog = [...chatLog, { user: "me", message: `${input}` }];
     setInput("");
     setChatLog(newChatLog);
@@ -79,70 +29,57 @@ const MainContent = ({ chatLog, setChatLog }: any) => {
       { user: "gpt", message: `${data?.data}` },
     ]);
   };
-  const handleSubmit = async (e: any) => {
-    e.preventDefault();
-
-    const data = new FormData(e.target);
-
-    const newChatHistory = [
-      ...chatHistory,
-      {
-        isAi: false,
-        value: data.get("prompt"),
-        uniqueId: generateUniqueId(),
-      },
-    ];
-
-    setChatHistory(newChatHistory);
-
-    e.target.reset();
-
-    const response = await fetch(`${BACKEND_BASE_URL}/ai/ask`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        prompt: data.get("prompt"),
-      }),
-    });
-
-    if (response.ok) {
-      const data = await response.json();
-      const parsedData = data.bot.trim(); // trims any trailing spaces/'\n'
-
-      const newChatHistory = [
-        ...chatHistory,
-        {
-          isAi: true,
-          value: parsedData,
-          uniqueId: generateUniqueId(),
-        },
-      ];
-
-      setChatHistory(newChatHistory);
-    } else {
-      const err = await response.text();
-      alert(err);
-    }
-  };
 
   return (
     <div className="">
       <div className="">
-        <div className="Chat_box">
-          <div className="chat_log h-3/4 overflow-y-scroll">
-            {chatLog?.map((e: any, i: any) => {
-              return <ChatMessage key={i} message={e} />;
-            })}
-          </div>
-          <div className="absolute bottom-0 right-0 left-0">
-            <InputField
-              input={input}
-              setInput={setInput}
-              handleCallAi={handleCallAi}
-            />
-          </div>
+        {chatLog.length === 0 ? (
+          <>
+            {" "}
+            <main className="relative h-full w-full transition-width flex flex-col overflow-hidden items-stretch flex-1">
+              <div className="flex-1 overflow-hidden">
+                <div className="react-scroll-to-bottom--css-nvoqx-79elbk h-full dark:bg-gray-800">
+                  <div className="react-scroll-to-bottom--css-nvoqx-1n7m0yu">
+                    <div className="flex flex-col items-center text-sm dark:bg-gray-800">
+                      <div className="w-full md:max-w-2xl lg:max-w-3xl md:h-full md:flex md:flex-col px-6 text-gray-100">
+                        <h1 className="text-4xl font-semibold text-center mt-6 sm:mt-[20vh] ml-auto mr-auto mb-10 sm:mb-16 flex gap-2 items-center justify-center">
+                          ChatGPT-2.0{" "}
+                          <span className="text-sm">
+                            (By{" "}
+                            <Link
+                              target="_blank"
+                              href="https://github.com/CrisTain333"
+                              className="underline"
+                            >
+                              Cristain
+                            </Link>
+                            )
+                          </span>
+                        </h1>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </main>
+          </>
+        ) : (
+          <>
+            <div className="Chat_box">
+              <div className="chat_log h-3/4 overflow-y-scroll">
+                {chatLog?.map((e: any, i: any) => {
+                  return <ChatMessage key={i} message={e} />;
+                })}
+              </div>
+            </div>
+          </>
+        )}
+        <div className="absolute bottom-0 right-0 left-0">
+          <InputField
+            input={input}
+            setInput={setInput}
+            handleCallAi={handleCallAi}
+          />
         </div>
       </div>
     </div>
