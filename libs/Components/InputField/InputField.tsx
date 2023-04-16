@@ -2,7 +2,7 @@ import React from "react";
 
 const InputField = () => {
   return (
-    <div className="w-[80%] mx-auto p-10">
+    <div className="w-[85%] mx-auto p-10">
       <div className="flex flex-col w-full py-2 flex-grow md:py-3 md:pl-4 relative border border-gray-900/50 text-white bg-[#42434f] rounded-md shadow-[0_0_15px_rgba(0,0,0,0.10)]">
         <textarea
           //   tabindex="0"
@@ -10,7 +10,7 @@ const InputField = () => {
           //   style="max-height: 200px; height: 24px; overflow-y: hidden;"
           rows={1}
           placeholder="Send a message..."
-          className="m-0 w-full resize-none border-[#42434f] bg-transparent p-0 pr-7 focus:ring-0 focus-visible:ring-0  pl-2 md:pl-0 "
+          className="m-0 w-full resize-none border-[#42434f] bg-transparent p-0 pr-7 focus:ring-0 focus-visible:ring-0  pl-2 md:pl-0 outline-none "
         ></textarea>
         <button
           //   disabled=""
