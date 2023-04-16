@@ -1,9 +1,10 @@
+import Home from "@/libs/modules/home/home";
 import React from "react";
 
 const index = () => {
   return (
     <div>
-      <p>Main Page</p>
+      <Home />
     </div>
   );
 };
