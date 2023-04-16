@@ -4,12 +4,8 @@ import Image from "next/image";
 import ChatMessage from "../ChatMessage/ChatMessage";
 import { BACKEND_BASE_URL } from "@/libs/config/const";
 
-const MainContent = () => {
+const MainContent = ({ chatLog, setChatLog }: any) => {
   const [input, setInput] = useState<any>("");
-  const [chatLog, setChatLog] = useState<any>([
-    { user: "gpt", message: "hy Cristain How can i help you" },
-    { user: "me", message: "i want to use chatGPT-2.0" },
-  ]);
 
   const handleCallAi = async () => {
     console.log(input);

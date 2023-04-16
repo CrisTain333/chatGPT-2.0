@@ -1,12 +1,18 @@
 import React from "react";
 
-const SideMenu = () => {
+const SideMenu = ({ chatLog, setChatLog }: any) => {
+  const clearChat = () => {
+    setChatLog([]);
+  };
   return (
     <div>
       <div className="p-2">
         {/* button div  */}
         <div className="aside_button">
-          <button className="w-full flex py-3 px-3 items-center gap-3 rounded-md hover:bg-gray-500/10 transition-colors duration-200 text-white cursor-pointer text-sm mb-1 flex-shrink-0 border border-white/20">
+          <button
+            className="w-full flex py-3 px-3 items-center gap-3 rounded-md hover:bg-gray-500/10 transition-colors duration-200 text-white cursor-pointer text-sm mb-1 flex-shrink-0 border border-white/20"
+            onClick={clearChat}
+          >
             <span className="mr-3">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
