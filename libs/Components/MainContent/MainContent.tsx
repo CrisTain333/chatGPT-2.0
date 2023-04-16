@@ -10,7 +10,7 @@ const MainContent = () => {
           <div className="chat_log ">
             <div className="chat_message ">
               {/* avatar */}
-              <div className="chat_message_center max-w-2xl mx-auto flex p-3 text-left  px-6 ">
+              <div className="chat_message_center max-w-3xl mx-auto flex p-3 text-left  px-6 ">
                 <div className="avatar w-11 rounded-ful">
                   <Image
                     className="w-11 h-11 rounded-full"
@@ -28,7 +28,7 @@ const MainContent = () => {
             </div>
             <div className="chatGPT_section bg-[#444654]">
               {/* avatar */}
-              <div className="chat_message_center max-w-2xl mx-auto flex p-3 text-left  px-6 ">
+              <div className="chat_message_center max-w-3xl mx-auto flex p-3 text-left  px-6 ">
                 <div className="avatar w-11 h-11 rounded-ful bg-[#10a37f] rounded-full flex items-center justify-center">
                   {/* <Image
                     className="w-8 h-8 rounded-full"
