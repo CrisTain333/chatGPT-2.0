@@ -1,5 +1,4 @@
 import React from "react";
-import InputField from "../InputField/InputField";
 
 const MainContent = () => {
   return (
@@ -87,13 +86,13 @@ const MainContent = () => {
                         Capabilities
                       </h2>
                       <ul className="flex flex-col gap-3.5 w-full sm:max-w-md m-auto">
-                        <li className="w-full bg-gray-50 dark:bg-white/5 p-3 rounded-md">
+                        <li className="w-full bg-white/5 p-3 rounded-md">
                           Remembers what user said earlier in the conversation
                         </li>
-                        <li className="w-full bg-gray-50 dark:bg-white/5 p-3 rounded-md">
+                        <li className="w-full bg-white/5 p-3 rounded-md">
                           Allows user to provide follow-up corrections
                         </li>
-                        <li className="w-full bg-gray-50 dark:bg-white/5 p-3 rounded-md">
+                        <li className="w-full bg-white/5 p-3 rounded-md">
                           Trained to decline inappropriate requests
                         </li>
                       </ul>
@@ -119,14 +118,14 @@ const MainContent = () => {
                         Limitations
                       </h2>
                       <ul className="flex flex-col gap-3.5 w-full sm:max-w-md m-auto">
-                        <li className="w-full bg-gray-50 dark:bg-white/5 p-3 rounded-md">
+                        <li className="w-full bg-white/5 p-3 rounded-md">
                           May occasionally generate incorrect information
                         </li>
-                        <li className="w-full bg-gray-50 dark:bg-white/5 p-3 rounded-md">
+                        <li className="w-full bg-white/5 p-3 rounded-md">
                           May occasionally produce harmful instructions or
                           biased content
                         </li>
-                        <li className="w-full bg-gray-50 dark:bg-white/5 p-3 rounded-md">
+                        <li className="w-full bg-white/5 p-3 rounded-md">
                           Limited knowledge of world and events after 2021
                         </li>
                       </ul>
@@ -138,11 +137,11 @@ const MainContent = () => {
             </div>
           </div>
         </div>
-        <div className="absolute bottom-0 left-0 w-full border-t md:border-t-0 dark:border-white/20 md:border-transparent md:dark:border-transparent md:bg-vert-light-gradient bg-white dark:bg-gray-800 md:!bg-transparent dark:md:bg-vert-dark-gradient pt-2">
+        <div className="absolute bottom-0 left-0 w-full border-t md:border-t-0 border-white/20 md:border-transparent  md:bg-vert-light-gradient bg-gray-800 md:!bg-transparent md:bg-vert-dark-gradient pt-2">
           <form className="stretch mx-2 flex flex-row gap-3 last:mb-2 md:mx-4 md:last:mb-6 lg:mx-auto lg:max-w-2xl xl:max-w-3xl">
             <div className="relative flex h-full flex-1 md:flex-col">
               <div className="flex ml-1 md:w-full md:m-auto md:mb-2 gap-0 md:gap-2 justify-center"></div>
-              <div className="flex flex-col w-full py-2 flex-grow md:py-3 md:pl-4 relative border border-black/10 bg-white dark:border-gray-900/50 dark:text-white dark:bg-gray-700 rounded-md shadow-[0_0_10px_rgba(0,0,0,0.10)] dark:shadow-[0_0_15px_rgba(0,0,0,0.10)]">
+              <div className="flex flex-col w-full py-2 flex-grow md:py-3 md:pl-4 relative border border-gray-900/50 text-white bg-gray-700 rounded-md shadow-[0_0_15px_rgba(0,0,0,0.10)]">
                 <textarea
                   //   tabindex="0"
                   data-id="root"
@@ -153,7 +152,7 @@ const MainContent = () => {
                 ></textarea>
                 <button
                   //   disabled=""
-                  className="absolute p-1 rounded-md text-gray-500 bottom-1.5 md:bottom-2.5 hover:bg-gray-100 enabled:dark:hover:text-gray-400 dark:hover:bg-gray-900 disabled:hover:bg-transparent dark:disabled:hover:bg-transparent right-1 md:right-2 disabled:opacity-40"
+                  className="absolute p-1 rounded-md text-gray-500 bottom-1.5 md:bottom-2.5  enabled:dark:hover:text-gray-400 hover:bg-gray-900 disabled:hover:bg-transparent dark:disabled:hover:bg-transparent right-1 md:right-2 disabled:opacity-40"
                 >
                   <svg
                     stroke="currentColor"
@@ -174,20 +173,6 @@ const MainContent = () => {
               </div>
             </div>
           </form>
-          <div className="px-3 pt-2 pb-3 text-center text-xs text-black/50 dark:text-white/50 md:px-4 md:pt-3 md:pb-6">
-            <span>
-              <a
-                href="https://help.openai.com/en/articles/6825453-chatgpt-release-notes"
-                target="_blank"
-                rel="noreferrer"
-                className="underline"
-              >
-                ChatGPT Mar 23 Version
-              </a>
-              . Free Research Preview. ChatGPT may produce inaccurate
-              information about people, places, or facts.
-            </span>
-          </div>
         </div>
       </main>
     </div>
