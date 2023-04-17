@@ -66,7 +66,7 @@ const MainContent = ({ chatLog, setChatLog }: any) => {
         ) : (
           <>
             <div className="Chat_box">
-              <div className="chat_log h-3/4 overflow-y-scroll">
+              <div className="chat_log max-h-[82vh] overflow-y-scroll scrollbar-hidden">
                 {chatLog?.map((e: any, i: any) => {
                   return <ChatMessage key={i} message={e} />;
                 })}

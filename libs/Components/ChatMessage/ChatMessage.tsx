@@ -45,7 +45,7 @@ const ChatMessage = ({ message }: any) => {
               <>
                 <Image
                   className="w-10 h-10 rounded-full"
-                  src="https://i.ibb.co/dKNdmP1/profile-pic-4.png"
+                  src="https://i.ibb.co/cQYmnCs/man.png"
                   alt="Rounded avatar"
                   height={500}
                   width={500}
